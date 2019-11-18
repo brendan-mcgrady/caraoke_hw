@@ -1,6 +1,6 @@
 class Room
 
-  attr_reader :name
+  attr_reader :name, :max_cap, :entry_fee
 
   def initialize(name, max_cap, entry_fee)
     @name = name
@@ -10,11 +10,12 @@ class Room
     @playlist = []
   end
 
-  def add_guest_to_room(guest, entry_fee)
-    if guest.money() >= entry_fee
-      @guests.push(guest)
-    else
-    end
+  def add_song_to_playlist(song)
+    @playlist << song
+  end
+
+  def playlist_song_count()
+    return @playlist.count()
   end
 
 end
